@@ -1,6 +1,6 @@
 import React from "react"
 import { TodoContext } from "../../providers/TodoContext"
-import './index.css'
+import './TodoSearch.css'
 
 function TodoSearch() {
 
@@ -11,12 +11,15 @@ function TodoSearch() {
     }
 
     return (
-        <input 
-            className="TodoSearch" 
-            placeholder="Buscar" 
-            value={searchValue}
-            onChange={onSearchValueChange}
-        />
+        <div className="containerTodoSearch">
+            <input 
+                className="TodoSearch" 
+                placeholder="Buscar" 
+                value={searchValue}
+                onChange={onSearchValueChange}
+            />
+            <i class="fa fa-search"></i>
+        </div>
     );
 }
 
