@@ -45,7 +45,7 @@
 
 .containerTodoSearch:hover,
 .containerTodoSearch:valid {
-    width: calc(100% - 62px);
+    width: 100%;
     cursor: pointer;
 }
 
