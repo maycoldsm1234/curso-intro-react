@@ -11,6 +11,7 @@ import { Modal } from '../Modal'
 import { TodosError } from '../TodosError'
 import { TodosLoading } from '../TodosLoading'
 import { EmptyTodos } from '../EmptyTodos'
+import { ChangeAlertWithStoragelistener } from "../ChangeAlert"
 
 function App() {
     const {
@@ -26,6 +27,7 @@ function App() {
         searchValue, 
         setSearchValue,
         addTodo,
+        sincronizeTodos
     } = useTodos()
 
     return (
@@ -60,6 +62,9 @@ function App() {
                         onDelete={() => deleteTodo(todo.text)}
                     />
                 )}
+            />
+            <ChangeAlertWithStoragelistener 
+                sincronize={sincronizeTodos} 
             />
             
             {!!openModal && (
