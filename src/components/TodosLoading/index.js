@@ -3,11 +3,13 @@ import './TodosLoading.css'
 
 function TodosLoading() {
     return (
-        <div className="containerLoader">
-            <div className="loader"></div>
-            <label className="labelLoader">Cargando TODOS</label>
-        </div>
-        
+
+        <li className="TodoItem containerLoading">
+            <span class="fa fa-sync Icon" aria-hidden="true"></span>
+            <p className={`TodoItem-p }`}>
+                Cargando TODOS
+            </p>
+        </li>        
     )
 }
 

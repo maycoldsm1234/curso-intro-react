@@ -12,7 +12,7 @@ function CreateTodoButton(props){
             className="CreateTodoButton"
             onClick={onClickButton}
         >
-            +
+            <i className="fa fa-plus"></i>
         </button>
     );
 }

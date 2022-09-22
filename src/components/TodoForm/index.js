@@ -32,12 +32,14 @@ function TodoForm({ addTodo, setOpenModal }) {
                     className="TodoForm-button TodoForm-button--cancel"
                     onClick={onCancel}
                 >
+                    <i className="fa fa-times fa--form"></i>
                     Cancelar
                 </button>
                 <button
                 className="TodoForm-button TodoForm-button--add"
                     type="submit"
                 >
+                    <i className="fa fa-plus fa--form"></i>
                     Añadir
                 </button>
             </div>
