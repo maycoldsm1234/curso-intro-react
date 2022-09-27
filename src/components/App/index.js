@@ -11,7 +11,7 @@ import { Modal } from '../Modal'
 import { TodosError } from '../TodosError'
 import { TodosLoading } from '../TodosLoading'
 import { EmptyTodos } from '../EmptyTodos'
-import { ChangeAlertWithStoragelistener } from "../ChangeAlert"
+import { ChangeAlert } from "../ChangeAlert"
 
 function App() {
     const {
@@ -63,7 +63,7 @@ function App() {
                     />
                 )}
             />
-            <ChangeAlertWithStoragelistener 
+            <ChangeAlert 
                 sincronize={sincronizeTodos} 
             />
             
