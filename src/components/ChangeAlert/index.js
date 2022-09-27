@@ -6,11 +6,13 @@ function ChangeAlert({ show, toggleShow }) {
 
     if(show) {
         return (
-            <div className="rectangle">
-                <div className="notification-text">
-                    <i className="fa fa-info-circle"></i>
-                    <span>Hubo cambios, actualizar datos.</span>
-                    <i className="fa fa-sync" onClick={() => toggleShow(false)}></i>
+            <div className="backdrop">
+                <div className="rectangle">
+                    <div className="notification-text">
+                        <i className="fa fa-info-circle"></i>
+                        <span>Hubo cambios, actualizar datos.</span>
+                        <i className="fa fa-sync" onClick={() => toggleShow(false)}></i>
+                    </div>
                 </div>
             </div>
         )

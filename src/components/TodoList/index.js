@@ -7,8 +7,8 @@ function TodoList(props) {
         <section className="TodoList-conatiner">
             { props.error && props.onError() }
             { props.loading && props.onLoading() }
-            { (!props.loading && !props.totalTodos) && props.onEmptyTodos }
-            { props.searchedTodos.map(todo => renderFuntion(todo)) }
+            { (!props.loading && !props.totalTodos) && props.onEmptyTodos() }
+            { (!props.loading && !props.error) && props.searchedTodos.map(todo => renderFuntion(todo)) }
             { (!!props.totalTodos && !props.searchedTodos?.length) && props.onEmptySearch(props.searchValue) }
         </section>
     )
