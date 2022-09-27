@@ -1,10 +1,7 @@
 import React from "react"
-import { TodoContext } from "../../providers/TodoContext"
 import './TodoSearch.css'
 
-function TodoSearch() {
-
-    const { searchValue, setSearchValue } =React.useContext(TodoContext)
+function TodoSearch({ searchValue, setSearchValue, loading }) {
     const onSearchValueChange = (event) => {
         console.log('Buscando: ', event.target.value)
         setSearchValue(event.target.value)
@@ -14,9 +11,10 @@ function TodoSearch() {
         <div className="containerTodoSearch">
             <input 
                 className="TodoSearch" 
-                placeholder="Buscar" 
+                placeholder="Buscar TODOs" 
                 value={searchValue}
                 onChange={onSearchValueChange}
+                disabled={loading}
             />
             <i className="fa fa-search"></i>
         </div>

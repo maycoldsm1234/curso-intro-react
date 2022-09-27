@@ -1,14 +1,13 @@
 import React from 'react'
 import { useLocalStorage } from "./useLocalStorage";
 
-const TodoContext = React.createContext()
-
-function TodoProvider(props) {
+function useTodos() {
     const {
         item: todos, 
         saveItem: saveTodos, 
+        sincronizeItem: sincronizeTodos,
         loading,
-        error
+        error,
     } = useLocalStorage('TODOS_V1', [])
     const [searchValue, setSearchValue] = React.useState('');
     const [openModal, setOpenModal] = React.useState(false);
@@ -52,7 +51,7 @@ function TodoProvider(props) {
     }
 
     return (
-        <TodoContext.Provider value={{
+        {
             loading,
             error,
             completedTodos,
@@ -64,11 +63,10 @@ function TodoProvider(props) {
             deleteTodo,
             addTodo,
             openModal,
-            setOpenModal
-        }}>
-            {props.children}
-        </TodoContext.Provider>
+            setOpenModal,
+            sincronizeTodos
+        }
     )
 }
 
-export { TodoContext, TodoProvider }
+export { useTodos }

@@ -1,13 +1,8 @@
 import React from "react";
-import { TodoContext } from "../../providers/TodoContext";
 import './TodoForm.css'
 
-function TodoForm() {
+function TodoForm({ addTodo, setOpenModal }) {
     const [newTodoValue, setNewTodoValue] = React.useState('')
-    const {
-        addTodo,
-        setOpenModal
-    } = React.useContext(TodoContext)
 
     const onChange = (e) => {
         setNewTodoValue(e.target.value)
@@ -37,12 +32,14 @@ function TodoForm() {
                     className="TodoForm-button TodoForm-button--cancel"
                     onClick={onCancel}
                 >
+                    <i className="fa fa-times fa--form"></i>
                     Cancelar
                 </button>
                 <button
                 className="TodoForm-button TodoForm-button--add"
                     type="submit"
                 >
+                    <i className="fa fa-plus fa--form"></i>
                     Añadir
                 </button>
             </div>
